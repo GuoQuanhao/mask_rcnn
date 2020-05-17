@@ -47,8 +47,12 @@ def main():
             if label_name in label_name_to_value:
                 label_value = label_name_to_value[label_name]
             else:
-                label_value = len(label_name_to_value)
-                label_name_to_value[label_name] = label_value
+                if label_name == 'rabbit':
+                    label_value = 1
+                    label_name_to_value[label_name] = label_value
+                else:
+                    label_value = 2
+                    label_name_to_value[label_name] = label_value
         lbl, _ = utils.shapes_to_label(
             img.shape, data['shapes'], label_name_to_value
         )
@@ -64,10 +68,11 @@ def main():
         PIL.Image.fromarray(img).save(osp.join(out_dir, 'img.png'))
         utils.lblsave(osp.join(out_dir, 'label.png'), lbl)
         PIL.Image.fromarray(lbl_viz).save(osp.join(out_dir, 'label_viz.png'))
-
+        
         with open(osp.join(out_dir, 'label_names.txt'), 'w') as f:
             for lbl_name in label_names:
-                f.write(lbl_name + '\n')
+                if lbl_name != None:
+                    f.write(lbl_name + '\n')
 
         print('INFO:Saved to: {}'.format('images/segmentation/test/' + file_name[i]))
 
