@@ -11,7 +11,7 @@ tensorflow mask rcnn
 python 爬虫源码文件为 image_gather.py，运行方式为在此源码的同级目录下新建一个 name.txt 文件，里面写入你想要下载的图片名称，我以“美女”为例，然后运行如下命令
 ```powershell
 输入你需要下载的数量，我输入为 20
-
+```
 效果如下
 ![文件](https://img-blog.csdnimg.cn/20200320144907331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NTY3NDI3,size_16,color_FFFFFF,t_70#pic_center)
 ## 2.数据文件命名规范
